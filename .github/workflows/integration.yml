@@ -4,7 +4,7 @@ name: Continuous Integration
 
 on: 
   pull_request:
-    branches:[main] //pull request to merge to main branch
+    branches:[main] 
 
 env:
 DATABASE_URL: postgresql://postgres:Jesus33..@localhost:5432/products-api?schema=public
