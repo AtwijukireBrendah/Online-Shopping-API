@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  DATABASE_URL: postgresql://postgres:roland@DB@localhost:5432/quotedb?schema=public
+  DATABASE_URL: postgresql://postgres:Jesus33..@localhost:5432/products-api?schema=public
 
 jobs:
   test:
@@ -16,8 +16,8 @@ jobs:
         image: postgres:14-alpine
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: roland@DB
-          POSTGRES_DB: quotedb
+          POSTGRES_PASSWORD: Jesus33..
+          POSTGRES_DB: products-api
         ports:
           - 5432:5432
         options: >-
