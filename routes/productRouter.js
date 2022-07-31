@@ -11,7 +11,7 @@ const {
     createProduct,
     getProductById,
     updateProductById,
-    deleteProductById} = require('../controllers/ProductController');
+    deleteProductById} = require('../controllers/productController');
 
 const authenticate = require('../helpers/authenticate');
 
