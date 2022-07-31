@@ -11,7 +11,7 @@ const {
     createProduct,
     getProductById,
     updateProductById,
-    deleteProductById} = require('../controllers/ProductController');
+    deleteProductById} = require('../controllers/productController');
 
 const authenticate = require('../helpers/authenticate');
 
@@ -24,6 +24,7 @@ router.get("/:id",getProductById);
 router.patch("/:id",updateProductById);
 
 router.delete("/:id",deleteProductById);
+
 
 
 module.exports = router;

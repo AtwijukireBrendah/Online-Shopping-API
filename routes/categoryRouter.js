@@ -11,7 +11,7 @@ const {
     createCategory,
     getCategoryById,
     updateCategoryById,
-    deleteCategoryById} = require('../controllers/CategoryController');
+    deleteCategoryById} = require('../controllers/categoryController');
 
 const authenticate = require('../helpers/authenticate');
 
