@@ -1,7 +1,7 @@
 // continuous integration workflow
 name: Continuous Integration
 
-//event you are listening to tto triger workflow
+
 on: 
   pull_request:
     branches:[main] //pull request to merge to main branch
@@ -10,7 +10,6 @@ env:
 DATABASE_URL: postgresql://postgres:Jesus33..@localhost:5432/products-api?schema=public
 
 
-//define jobs and runners
 jobs:
   test:
     runs-on: ubuntu-latest
