@@ -34,7 +34,6 @@ const createUser = async(req,res)=>{
 
         //creating JWT token
         const token =JWT.sign({username:req.body.username,userId:newUser.id},"open123");
-        // res.header('x-auth-token',token).status(200).send('User created successfully');
         console.log(token)
         res.status(StatusCodes.OK).json({message:"New user has been created successfully",newUser,token})
     

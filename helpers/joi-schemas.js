@@ -1,9 +1,9 @@
 const Joi = require ('joi');
 
 // creating schemas for a particular object/entity
-const quote = Joi.object({
-    text:Joi.string().required().max(256),
-    authorId : Joi.number().required().min(1)
+const product = Joi.object({
+    name:Joi.string().required().max(256),
+  
 });
 
-module.exports = quote;
+module.exports = product;

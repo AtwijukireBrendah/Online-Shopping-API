@@ -1,0 +1,55 @@
+// continuous integration workflow
+name: Continuous Integration
+
+//event you are listening to tto triger workflow
+on: 
+  pull_request:
+    branches:[main] //pull request to merge to main branch
+
+env:
+DATABASE_URL: postgresql://postgres:Jesus33..@localhost:5432/products-api?schema=public
+
+
+//define jobs and runners
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services: 
+      postgres:
+        image: postgres:14-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Jesus33..
+          POSTGRES_DB: products-api
+        ports:
+          -5432:5432
+        options: >-
+        --health-cmd pg_isready
+        --health-interval 10s
+        --health-timeout 5s
+        --health-retries 5
+
+    steps:
+      -name: checkout code into the runner
+       uses: actions/checkout@v2
+
+       -name: Setup node on the runner
+       uses: actions/setup-node@v1
+       with:
+        node-version: 14
+
+       -name: Install project dependencies
+        run: npm ci
+
+       -name: Run database migration files
+        run: npm run db-migrate
+       
+       -name : Run unit tests
+        run: npm test
+
+
+    
+  
+
+
