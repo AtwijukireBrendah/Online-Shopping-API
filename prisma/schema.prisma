@@ -25,8 +25,8 @@ model Product {
   price         Int
   description   String   @unique
   numberInStock Int
-  Upload        Upload?  @relation(fields: [uploadId], references: [id])
-  uploadId      Int?
+  // Upload        Upload?  @relation(fields: [uploadId], references: [id])
+  // uploadId      Int?
 }
 
 model Category {
@@ -35,9 +35,9 @@ model Category {
   products Product[]
 }
 
-model Upload {
-  id       Int       @id @default(autoincrement())
-  title     String    @unique
-  imageUrl String
-  products Product[]
-}
+// model Upload {
+//   id       Int       @id @default(autoincrement())
+//   title     String    @unique
+//   imageUrl String
+//   products Product[]
+// }
