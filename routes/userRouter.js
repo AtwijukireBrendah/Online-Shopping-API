@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-
 //Import Controllers
 const {getAllUsers,createUser} = require('../controllers/userController');
 
