@@ -32,6 +32,9 @@ CREATE TABLE "Category" (
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "User_password_key" ON "User"("password");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Product_name_key" ON "Product"("name");
 
 -- CreateIndex
