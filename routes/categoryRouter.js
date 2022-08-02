@@ -26,4 +26,5 @@ router.patch("/:id",updateCategoryById);
 router.delete("/:id",deleteCategoryById);
 
 
+
 module.exports = router;
