@@ -7,7 +7,7 @@ test('Should get all users in the database',async()=>{
 
 test('Should create a new user',async()=>{
     await request(app).post('/api/v1/users').send({
-        username:'TestUser',
+        username:'TestUser1',
         password: '188832009'
     }).expect(200)
 })
