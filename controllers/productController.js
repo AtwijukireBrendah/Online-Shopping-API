@@ -38,7 +38,6 @@ const createProduct = async(req,res)=>{
         res.status(500).json({error:error.message})
     }
 }
-
 const getProductById = async(req,res)=>{
     try{
         const id =req.params.id
