@@ -17,13 +17,12 @@ const authenticate = require('../helpers/authenticate');
 
 router.get("/",getAllProducts);
 
-router.post("/",[authenticate,validateData(ProductSchema)], createProduct);
+router.post("/",validateData(ProductSchema), createProduct);
 
 router.get("/:id",getProductById);
 
 router.patch("/:id",updateProductById);
 
 router.delete("/:id",deleteProductById);
-
 
 module.exports = router;
