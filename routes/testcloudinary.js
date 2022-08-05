@@ -11,7 +11,6 @@ const cloudinary = require('cloudinary');
 const ProductSchema =require('../helpers/joi-schemas');
 const validateData = require('../helpers/validation');
 
-
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.API_KEY,
