@@ -17,7 +17,7 @@ const authenticate = require('../helpers/authenticate');
 
 router.get("/",getAllProducts);
 
-router.post("/",[authenticate,validateData(ProductSchema)], createProduct);
+router.post("/",validateData(ProductSchema), createProduct);
 
 router.get("/:id",getProductById);
 

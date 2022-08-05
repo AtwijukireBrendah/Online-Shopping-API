@@ -3,13 +3,17 @@ const {PrismaClient} = require('@prisma/client');
 const { request } = require('express');
 //instance of prisma client
 const prisma = new PrismaClient();
+const multer  = require('multer')
+const {unlink} = require('fs');
+const cloudinary = require('cloudinary');
+const upload = multer({ dest: 'uploads/' });
+
 
 // PRODUCTS CRUD
 //Route handler  and request handler
 const getAllProducts = async(req,res)=>{
     try{
         const Products = await prisma.product.findMany({
-            // include:{author:true}
         })
         res.status(200).json(Products)
     }catch(error){
@@ -19,9 +23,15 @@ const getAllProducts = async(req,res)=>{
 
 const createProduct = async(req,res)=>{
     try{
-        // const {text,authorId} =req.body
         const newProduct = await prisma.Product.create({
-            // data:{text,authorId}
+            data: {
+                name: req.body.name,
+                categoryId: req.body.categoryId,
+                image: req.body.image,
+                price: req.body.price,
+                description: req.body.description,
+                numberInStock: req.body.numberInStock
+            }
         })
         res.status(200).json({message:"Product has been added successfully.",Product:newProduct})
     }catch(error){
@@ -37,7 +47,6 @@ const getProductById = async(req,res)=>{
                 where:{
                     id:Number(id)
                 },
-                // include:{author:true}
             })
             res.status(200).json(Product)
         }else{
@@ -74,7 +83,6 @@ const deleteProductById = async(req,res)=>{
             where:{
                 id:Number(id)
             },
-            // include:{author:true}
         })
         if(Product){   
             res.status(200).json({message:"Product has been deleted."})
@@ -91,5 +99,5 @@ module.exports = {
     createProduct,
     getProductById,
     updateProductById,
-    deleteProductById
+    deleteProductById,
 }
