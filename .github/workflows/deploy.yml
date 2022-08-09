@@ -3,6 +3,9 @@ name: Continuous Deployment
 on:
   push:
     branches: [main]
+
+env:
+  DATABASE_URL: postgresql://postgres:Jesus33..@localhost:5432/products-api?schema=public
   
 jobs:
   deploy-to-production:
